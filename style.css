@@ -1,95 +1,59 @@
 
-body{
-    background-color: white;
-}
-main{
-    display: flexbox;
-    
-    border: 1px solid gray;
-    border-radius: 2px;
-    padding:auto;
-    margin:auto;
-    border:0; 
-}
-header{
-    border: 1px solid gray;
-    border-radius: 2px;
-
-}
-h1{
-    color: #e2e2e2;
-    background-color: white;
-    padding: 3px;
-    margin: 8px;
-}
-nav{
-    margin:0;
-    border:0; 
-    border: 1px solid gray;
-    border-radius: 2px;
-}
-#home{
-    border: 1px solid gray;
-    border-radius: 2px;
+*{
+    box-sizing: border-box;
 }
 article{
-    padding:0;
-    margin:0;
-    border:0; 
-    text-align: justify;
-    color: beige;
-    margin: 5px;
-    background: #9c9c9c;
-    flex: 1 1 200px;
+    background-color: lightgray;
+    padding: 5px;
 }
-article header{
-    border: 1px solid red;
+article h1{
     background-color: red;
-    margin: 5px;
-    padding: 2px;
-    
+    color: white;
+    margin: 0px;
 }
-article h2{
-    font-weight: 50;
-}
-article p{
-    padding: 8px;
-    margin: 5px;
-    font-family: sans-serif;
-    
-}
-article:nth-of-type(1){
-    order: 0;
-}
-article:nth-of-type(2){
-    order: 0;
-}
-article:nth-of-type(3){
-    order: 0;
-}
-article:nth-of-type(4)  {
-    flex-grow: 10; 
-    order: 0;
-  }
-article:nth-of-type(5){
-    order: 0;
-}
+
 section{
     display: flex;
-    flex-flow: row wrap;
-    align-items: stretch;
-    justify-content: space-around;
-    margin: 0 auto;
-    border: 1px solid gray;
-    border-radius: 2px;
+    flex-flow: wrap;
+    flex-direction: row-reverse;
+    gap: 5px;
+    align-items: baseline;
+    align-content: flex-start;
+    /*justify-content: ;*/
 }
-article:nth-of-type(4)  {
-    flex-grow: 10; 
-  }
-  footer{
-    padding:0;
-    margin:0;
-    border:0; 
-    border: 1px solid gray;
-    border-radius: 2px;
+section > *{
+    /*flex-basis: calc(33% - 5px);
+    flex-grow: 1;
+    flex-shrink: 0;*/
+    flex-basis: calc(33% - 5px);
+}
+section article:nth-child(1){
+    order: -20;
+}
+.probaBox{
+    flex-grow: 3;
+    align-self: flex-end;
+    order:-10;
+}
+/*Menü kialakítása*/
+#fenti_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+footer nav{
+    display: flex;
+    justify-content: center;
+}
+  @media only screen and (max-width:600px){
+        section{
+            flex-direction: column;
+        }
+        nav{
+            flex-direction: column;
+        }
+        #fenti_menu{
+            display: flex;
+            flex-direction: column;
+        }
   }
